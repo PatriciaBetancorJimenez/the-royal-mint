@@ -33,7 +33,6 @@ var coins = {
 
 //variable declaration
 
-let col;
 const arrayCards = [];
 const rows = document.querySelectorAll(".row");
 
@@ -43,7 +42,7 @@ for (let card in coins) {
 
 rows.forEach(function (row) {
   arrayCards.forEach(function (card) {
-    col = document.createElement("div");
+    const col = document.createElement("div");
     col.classList.add("col-sm-6", "col-lg-3", "mt-3");
 
     col.innerHTML = `
