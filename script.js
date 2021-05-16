@@ -38,12 +38,10 @@ const arrayCards = [];
 const rows = document.querySelectorAll(".row");
 
 for (let card in coins) {
-  // loop through object and create array with the 4 keys(cards)
   arrayCards.push(coins[card]);
 }
 
 rows.forEach(function (row) {
-  // for each row, I create 4 cards
   arrayCards.forEach(function (card) {
     col = document.createElement("div");
     col.classList.add("col-sm-6", "col-lg-3", "mt-3");
@@ -61,9 +59,8 @@ rows.forEach(function (row) {
                 <p class="card-text">${card.description}</p>
                 <a href="${card.link}" class="btn btn-primary ">shop now</a>
               </div>
-            </div>
+            </div>`;
 
-        `;
     row.append(col);
   });
 });
