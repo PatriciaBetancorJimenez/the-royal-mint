@@ -1,4 +1,5 @@
-.row-reverse {
+.row:last-child {
+  //reverse card order of last row
   flex-direction: row-reverse;
 }
 .card {
@@ -20,7 +21,7 @@
       left: 0;
       height: 100%;
       width: 100%;
-      background-color: rgba(black, 0.2);
+      background-color: rgba(black, 0.3);
     }
   }
 
@@ -38,22 +39,17 @@
 .btn {
   background-color: #726d7f;
   border-color: #726d7f;
+  font-weight: 300;
 
   border-radius: 0px;
 
-  &:hover {
-    background-color: #c1bfc7;
-    border-color: #c1bfc7;
-    color: #373347;
-  }
-
-  &:link,
-  &:visited,
+  &:hover,
   &:active,
   &:focus,
   &-primary:not(:disabled):not(.disabled):active:focus {
-    background-color: #726d7f;
-    border-color: #726d7f;
+    background-color: #c1bfc7;
+    border-color: #c1bfc7;
+    color: #373347;
 
     box-shadow: none;
   }

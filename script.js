@@ -34,46 +34,40 @@ var coins = {
 //variable declaration
 
 let col;
-const arrayKeys = [];
-const row = document.querySelector(".row");
+const arrayCards = [];
+const rows = document.querySelectorAll(".row");
 
-for (let key in coins) {
-  // loop through object and create array with the 4 main keys
-  arrayKeys.push(coins[key]);
+for (let card in coins) {
+  // loop through object and create array with the 4 keys(cards)
+  arrayCards.push(coins[card]);
 }
 
-function createColumn(i) {
-  //for each key, we create a bootstrap column
+rows.forEach(function (row) {
+  // for each row, I create 4 cards
+  arrayCards.forEach(function (card) {
+    col = document.createElement("div");
+    col.classList.add("col-sm-6", "col-lg-3", "mt-3");
 
-  col = document.createElement("div");
-  col.classList.add("col-sm-6", "col-lg-3", "my-5");
-  col.innerHTML = `
+    col.innerHTML = `
 
-      <div class="card ">
-      <h5 class="card-title my-4 pb-0">${arrayKeys[i].coin_name}</h5>
-      <div class="card-header p-0 ">
-         <div class="card-overlay "></div>
-         <img class="card-img-top" src="${arrayKeys[i].image}" alt="Card image cap" />
-      </div>
-        <div class="card-body ">
-          
-          <p class="card-text">${arrayKeys[i].description}</p>
-          <a href="${arrayKeys[i].link}" class="btn btn-primary ">Link</a>
-        </div>
-      </div>
+            <div class="card ">
+            <h5 class="card-title my-4 pb-0">${card.coin_name}</h5>
+            <div class="card-header p-0 ">
+              <div class="card-overlay "></div>
+              <img class="card-img-top" src="${card.image}" alt="Card image cap" />
+            </div>
+              <div class="card-body ">
+                
+                <p class="card-text">${card.description}</p>
+                <a href="${card.link}" class="btn btn-primary ">shop now</a>
+              </div>
+            </div>
 
-  `;
-  //column added to the bootstrap row.
+        `;
+    row.append(col);
+  });
+});
 
-  row.append(col);
-  // applied row-reverse class to invert order of elements
-  //row.classList.add("row-reverse");
-}
-
-for (let i = 0; i < arrayKeys.length; i++) {
-  createColumn(i);
-}
-
-// for (let i = arrayKeys.length - 1; i >= 0; i--) {
-//   createColumn(i);
+// for (let i = arrayCards.length - 1; i >= 0; i--) {
+//
 // }
